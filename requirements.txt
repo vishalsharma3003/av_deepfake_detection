@@ -1,0 +1,10 @@
+wget
+timm
+torch
+tensorflow
+moviepy
+librosa
+ffmpeg
+albumentations
+opencv-python
+tqdm
