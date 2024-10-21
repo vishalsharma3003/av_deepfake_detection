@@ -22,7 +22,7 @@ class ImageEncoder(nn.Module):
         if self.pretrained_image_encoder == False:
             self.model = DeepFakeClassifier(encoder="tf_efficientnet_b7_ns").to(self.device)
         else:
-            self.pretrained_ckpt = torch.load('DFDT TMC/pretrained/final_999_DeepFakeClassifier_tf_efficientnet_b7_ns_0_23', map_location=torch.device(self.args.device))
+            self.pretrained_ckpt = torch.load('/content/av_deepfake_detection/downloads/final_999_DeepFakeClassifier_tf_efficientnet_b7_ns_0_23', map_location=torch.device(self.args.device))
             self.state_dict = self.pretrained_ckpt.get("state_dict", self.pretrained_ckpt)
 
             self.model = DeepFakeClassifier(encoder="tf_efficientnet_b7_ns").to(self.device)
@@ -93,7 +93,7 @@ class RawNet(nn.Module):
 
         if self.pretrained_audio_encoder == True:
             print("Loading pretrained audio encoder")
-            ckpt = torch.load('DFDT TMC/pretrained/RawNet2.pth', map_location=torch.device(self.device))
+            ckpt = torch.load('/content/av_deepfake_detection/downloads/RawNet2.pth', map_location=torch.device(self.device))
             print("Loaded pretrained audio encoder")
             self.load_state_dict(ckpt, strict=False)
 
