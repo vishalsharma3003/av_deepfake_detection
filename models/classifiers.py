@@ -185,11 +185,11 @@ class DeepFakeClassifierGWAP(nn.Module):
         return x
 
 
-model_srm = DeepFakeClassifierSRM(encoder="tf_efficientnet_b3_ns", dropout_rate=0.5)
+# model_srm = DeepFakeClassifierSRM(encoder="tf_efficientnet_b3_ns", dropout_rate=0.5)
 
 # Similarly, you can use DeepFakeClassifier or DeepFakeClassifierGWAP
-model_gwap = DeepFakeClassifierGWAP(encoder="tf_efficientnet_b4_ns", dropout_rate=0.3)
+# model_gwap = DeepFakeClassifierGWAP(encoder="tf_efficientnet_b4_ns", dropout_rate=0.3)
 
 # Forward pass with input data (assuming you have data as tensor)
-output_srm = model_srm(data)
-output_gwap = model_gwap(data)
+# output_srm = model_srm(data)
+# output_gwap = model_gwap(data)
