@@ -23,7 +23,7 @@ class AudioTransform(BasicTransform):
 class TimeShifting(AudioTransform):
     """ Do time shifting of audio """
     def __init__(self, always_apply=False, p=0.5):
-        super(TimeShifting, self).__init__(always_apply, p)
+        super(TimeShifting, self).__init__(always_apply=always_apply, p=p)
         
     def apply(self,data,**params):
         '''
@@ -40,7 +40,7 @@ class TimeShifting(AudioTransform):
 class PitchShift(AudioTransform):
     """ Do time shifting of audio """
     def __init__(self, always_apply=False, p=0.5 , n_steps=None):
-        super(PitchShift, self).__init__(always_apply, p)
+        super(PitchShift, self).__init__(always_apply=always_apply, p=p)
         '''
         nsteps here is equal to number of semitones
         '''
@@ -57,7 +57,7 @@ class PitchShift(AudioTransform):
 class AddGaussianNoise(AudioTransform):
     """ Do time shifting of audio """
     def __init__(self, always_apply=False, p=0.5):
-        super(AddGaussianNoise, self).__init__(always_apply, p)
+        super(AddGaussianNoise, self).__init__(always_apply=always_apply, p=p)
         
         
     def apply(self,data,**params):
